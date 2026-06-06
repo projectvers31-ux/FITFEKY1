@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Fitness tracker placeholder">
+  <defs>
+    <linearGradient id="ft-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#A8DDD3"/>
+      <stop offset="55%" stop-color="#2F8A7B"/>
+      <stop offset="100%" stop-color="#0F3A35"/>
+    </linearGradient>
+    <radialGradient id="ft-glow" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#ft-bg)"/>
+  <rect width="800" height="600" fill="url(#ft-glow)"/>
+  <g transform="translate(400 290)">
+    <rect x="-130" y="-180" width="80" height="40" rx="14" fill="#0F3A35"/>
+    <rect x="-130" y="140" width="80" height="40" rx="14" fill="#0F3A35"/>
+    <rect x="50" y="-180" width="80" height="40" rx="14" fill="#0F3A35"/>
+    <rect x="50" y="140" width="80" height="40" rx="14" fill="#0F3A35"/>
+    <rect x="-160" y="-150" width="320" height="300" rx="50" fill="#0F3A35" stroke="#06302A" stroke-width="4"/>
+    <rect x="-130" y="-120" width="260" height="240" rx="32" fill="#1a1a1a"/>
+    <rect x="-110" y="-100" width="220" height="200" rx="20" fill="#06302A"/>
+    <g transform="translate(0 -10)">
+      <path d="M -70 20 L -50 0 L -20 0 L 0 -30 L 20 0 L 50 0 L 70 20" fill="none" stroke="#7AE3B5" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <text x="0" y="60" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, monospace" font-size="36" font-weight="800" fill="#7AE3B5">8,247</text>
+    <text x="0" y="82" text-anchor="middle" font-family="ui-sans-serif, system-ui, -apple-system, sans-serif" font-size="11" font-weight="600" fill="#7AE3B5" letter-spacing="2" opacity="0.85">STEPS</text>
+  </g>
+  <text x="400" y="500" text-anchor="middle" font-family="ui-sans-serif, system-ui, -apple-system, sans-serif" font-size="40" font-weight="700" fill="#ffffff" letter-spacing="-0.5">Fitness Tracker</text>
+  <text x="400" y="540" text-anchor="middle" font-family="ui-sans-serif, system-ui, -apple-system, sans-serif" font-size="20" font-weight="500" fill="#ffffff" opacity="0.85">Heart Rate · 7-Day Battery</text>
+</svg>

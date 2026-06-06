@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Jump rope placeholder">
+  <defs>
+    <linearGradient id="jr-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFB59A"/>
+      <stop offset="55%" stop-color="#E26946"/>
+      <stop offset="100%" stop-color="#5B1F12"/>
+    </linearGradient>
+    <radialGradient id="jr-glow" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#jr-bg)"/>
+  <rect width="800" height="600" fill="url(#jr-glow)"/>
+  <g fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round" opacity="0.95">
+    <path d="M 200 380 Q 400 80 600 380" stroke-dasharray="0"/>
+    <path d="M 200 380 Q 400 60 600 380" stroke-width="3" opacity="0.5"/>
+  </g>
+  <g transform="translate(200 380)">
+    <rect x="-12" y="-50" width="24" height="100" rx="10" fill="#1a1a1a" stroke="#ffffff" stroke-width="3"/>
+    <rect x="-14" y="-70" width="28" height="30" rx="4" fill="#ffffff"/>
+  </g>
+  <g transform="translate(600 380)">
+    <rect x="-12" y="-50" width="24" height="100" rx="10" fill="#1a1a1a" stroke="#ffffff" stroke-width="3"/>
+    <rect x="-14" y="-70" width="28" height="30" rx="4" fill="#ffffff"/>
+  </g>
+  <g fill="#ffffff" opacity="0.5">
+    <circle cx="320" cy="160" r="3"/>
+    <circle cx="400" cy="100" r="4"/>
+    <circle cx="480" cy="160" r="3"/>
+  </g>
+  <text x="400" y="500" text-anchor="middle" font-family="ui-sans-serif, system-ui, -apple-system, sans-serif" font-size="40" font-weight="700" fill="#ffffff" letter-spacing="-0.5">Speed Jump Rope</text>
+  <text x="400" y="540" text-anchor="middle" font-family="ui-sans-serif, system-ui, -apple-system, sans-serif" font-size="20" font-weight="500" fill="#ffffff" opacity="0.85">Smooth Bearings · Adjustable</text>
+</svg>

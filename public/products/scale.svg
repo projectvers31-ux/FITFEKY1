@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Kitchen scale placeholder">
+  <defs>
+    <linearGradient id="ks-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FADADD"/>
+      <stop offset="55%" stop-color="#C24A52"/>
+      <stop offset="100%" stop-color="#3E1B12"/>
+    </linearGradient>
+    <radialGradient id="ks-glow" cx="50%" cy="45%" r="60%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#ks-bg)"/>
+  <rect width="800" height="600" fill="url(#ks-glow)"/>
+  <g transform="translate(400 290)">
+    <ellipse cx="0" cy="60" rx="200" ry="22" fill="#000000" opacity="0.25"/>
+    <rect x="-180" y="-30" width="360" height="90" rx="22" fill="#F5F5F5" stroke="#3E1B12" stroke-width="3"/>
+    <circle cx="0" cy="14" r="34" fill="#1a1a1a" stroke="#3E1B12" stroke-width="3"/>
+    <text x="0" y="22" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, monospace" font-size="22" font-weight="800" fill="#7AE3B5">127.4</text>
+    <text x="0" y="36" text-anchor="middle" font-family="ui-sans-serif, system-ui, -apple-system, sans-serif" font-size="8" font-weight="600" fill="#7AE3B5" letter-spacing="1">G</text>
+    <g opacity="0.6">
+      <circle cx="-130" cy="14" r="4" fill="#3E1B12"/>
+      <circle cx="130" cy="14" r="4" fill="#3E1B12"/>
+    </g>
+  </g>
+  <text x="400" y="500" text-anchor="middle" font-family="ui-sans-serif, system-ui, -apple-system, sans-serif" font-size="40" font-weight="700" fill="#ffffff" letter-spacing="-0.5">Kitchen Scale</text>
+  <text x="400" y="540" text-anchor="middle" font-family="ui-sans-serif, system-ui, -apple-system, sans-serif" font-size="20" font-weight="500" fill="#ffffff" opacity="0.85">Precise to 1g · 5 Unit Modes</text>
+</svg>

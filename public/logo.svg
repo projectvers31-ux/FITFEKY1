@@ -1,0 +1,14 @@
+<svg width="180" height="34" viewBox="0 0 180 34" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="FitFeky">
+  <defs>
+    <linearGradient id="logoGradient" x1="0" y1="0" x2="34" y2="34" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#C85A5A"/>
+      <stop offset="100%" stop-color="#D4A574"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(0, 4)">
+    <path d="M16 4C9.5 4 4 9.5 4 16C4 22.5 9.5 28 16 28C19.5 28 22.6 26.5 24.8 24.2L21.7 21.5C20.3 23 18.3 24 16 24C11.6 24 8 20.4 8 16C8 11.6 11.6 8 16 8C18.3 8 20.3 9 21.7 10.5L24.8 7.8C22.6 5.5 19.5 4 16 4Z" fill="url(#logoGradient)"/>
+    <circle cx="22" cy="10" r="2.5" fill="#D4A574"/>
+    <path d="M22 5L22.8 7.2L25 8L22.8 8.8L22 11L21.2 8.8L19 8L21.2 7.2L22 5Z" fill="#D4A574" opacity="0.6"/>
+  </g>
+  <text x="36" y="24" font-family="ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif" font-size="20" font-weight="600" fill="currentColor" letter-spacing="-0.5">Fit<tspan font-weight="700">Feky</tspan></text>
+</svg>

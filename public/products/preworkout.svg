@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Pre-workout energy placeholder">
+  <defs>
+    <linearGradient id="pw-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1A1430"/>
+      <stop offset="55%" stop-color="#3D1F5C"/>
+      <stop offset="100%" stop-color="#0A0612"/>
+    </linearGradient>
+    <radialGradient id="pw-glow" cx="60%" cy="35%" r="55%">
+      <stop offset="0%" stop-color="#FFD86B" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#FFD86B" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#pw-bg)"/>
+  <rect width="800" height="600" fill="url(#pw-glow)"/>
+  <g transform="translate(360 260)">
+    <path d="M 30 -120 L -50 0 L 10 0 L -20 120 L 70 -10 L 10 -10 L 50 -120 Z" fill="#FFD86B" stroke="#FFB347" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M 30 -120 L -50 0 L 10 0 L -20 120 L 70 -10 L 10 -10 L 50 -120 Z" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.4"/>
+  </g>
+  <g stroke="#FFD86B" stroke-width="2" stroke-linecap="round" opacity="0.5">
+    <line x1="540" y1="180" x2="580" y2="140"/>
+    <line x1="560" y1="200" x2="600" y2="180"/>
+    <line x1="220" y1="340" x2="180" y2="370"/>
+    <line x1="240" y1="360" x2="210" y2="400"/>
+  </g>
+  <text x="400" y="500" text-anchor="middle" font-family="ui-sans-serif, system-ui, -apple-system, sans-serif" font-size="40" font-weight="700" fill="#ffffff" letter-spacing="-0.5">Pre-Workout</text>
+  <text x="400" y="540" text-anchor="middle" font-family="ui-sans-serif, system-ui, -apple-system, sans-serif" font-size="20" font-weight="500" fill="#FFD86B" opacity="0.95">200mg Caffeine · 40 Servings</text>
+</svg>
