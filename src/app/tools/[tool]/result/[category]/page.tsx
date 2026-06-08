@@ -41,6 +41,14 @@ export function generateStaticParams() {
   return params
 }
 
+function toMetricWeight(value: number, unit: string): number {
+  return unit === "imperial" ? value * 0.453592 : value
+}
+
+function toMetricHeight(value: number, unit: string): number {
+  return unit === "imperial" ? value * 2.54 : value
+}
+
 function computeUserValue(
   tool: string,
   category: string,
@@ -54,15 +62,18 @@ function computeUserValue(
     const v = parseFloat(get(k) ?? "")
     return Number.isFinite(v) ? v : NaN
   }
+  const unit = get("unit") || "metric"
 
   if (tool === "bmi") {
-    const w = num("weight"), h = num("height")
-    if (!Number.isFinite(w) || !Number.isFinite(h) || h === 0) return ""
+    const wRaw = num("weight"), hRaw = num("height")
+    if (!Number.isFinite(wRaw) || !Number.isFinite(hRaw) || hRaw === 0) return ""
+    const w = toMetricWeight(wRaw, unit)
+    const h = toMetricHeight(hRaw, unit)
     const m = h / 100
     return (w / (m * m)).toFixed(1)
   }
   if (tool === "calorie") {
-    const bmr = computeBmr(sp)
+    const bmr = computeBmr(sp, unit)
     const tdee = bmr * activityMultiplier(get("activity"))
     if (!Number.isFinite(tdee) || tdee === 0) return ""
     if (category === "weight-loss") return Math.round(tdee - 400).toString()
@@ -70,9 +81,11 @@ function computeUserValue(
     return Math.round(tdee).toString()
   }
   if (tool === "macro") {
-    const tdee = computeBmr(sp) * activityMultiplier(get("activity"))
+    const tdee = computeBmr(sp, unit) * activityMultiplier(get("activity"))
     if (!Number.isFinite(tdee) || tdee === 0) return ""
-    const protein = Math.round(num("weight") * 2.0)
+    const wRaw = num("weight")
+    const wKg = toMetricWeight(wRaw, unit)
+    const protein = Math.round(wKg * 2.0)
     const fat = Math.round((tdee * 0.25) / 9)
     const carbs = Math.round((tdee - protein * 4 - fat * 9) / 4)
     return `${protein}P / ${carbs}C / ${fat}F`
@@ -84,24 +97,64 @@ function computeUserValue(
     return `${Math.round(max * 0.6)}-${Math.round(max * 0.8)} bpm`
   }
   if (tool === "body-fat") {
-    const w = num("weight"), h = num("height")
-    if (!Number.isFinite(w) || !Number.isFinite(h) || h === 0) return ""
+    const wRaw = num("weight"), hRaw = num("height")
+    if (!Number.isFinite(wRaw) || !Number.isFinite(hRaw) || hRaw === 0) return ""
+    const w = toMetricWeight(wRaw, unit)
+    const h = toMetricHeight(hRaw, unit)
     const bmi = w / Math.pow(h / 100, 2)
     return `${bmi.toFixed(1)}% (est.)`
+  }
+  if (tool === "bmr") {
+    const bmr = computeBmr(sp, unit)
+    if (!Number.isFinite(bmr) || bmr === 0) return ""
+    return `${Math.round(bmr)} kcal/day`
+  }
+  if (tool === "protein") {
+    const w = num("weight")
+    const weightLb = unit === "metric" ? w * 2.20462 : w
+    if (!Number.isFinite(weightLb) || weightLb <= 0) return ""
+    const goal = category === "weight-loss" ? 1.0 : category === "muscle-gain" ? 1.2 : 0.8
+    return `${Math.round(weightLb * goal)} g/day`
+  }
+  if (tool === "ideal-weight") {
+    const hRaw = num("height")
+    const frame = get("frame")
+    if (!Number.isFinite(hRaw) || hRaw <= 0) return ""
+    const hCm = toMetricHeight(hRaw, unit)
+    const inches = hCm / 2.54
+    const base = inches > 60 ? (inches - 60) * 2.3 : 0
+    const frameAdj = frame === "small" ? -10 : frame === "large" ? 10 : 0
+    const ideal = 45.5 + base + frameAdj
+    return `${Math.round(ideal * 2.20462)} lbs (${Math.round(ideal)} kg)`
+  }
+  if (tool === "water-intake") {
+    const w = num("weight")
+    const weightKg = unit === "metric" ? w : w / 2.20462
+    if (!Number.isFinite(weightKg) || weightKg <= 0) return ""
+    const activity = get("activity")
+    const climate = get("climate")
+    const base = weightKg * 35
+    const activityOz = activity === "light" ? 8 : activity === "moderate" ? 16 : activity === "active" ? 24 : 0
+    const climateOz = climate === "hot" ? 16 : climate === "moderate" ? 8 : 0
+    const totalMl = base + activityOz * 29.5735 + climateOz * 29.5735
+    const totalOz = totalMl / 29.5735
+    return `${Math.round(totalOz)} oz (${(totalMl / 1000).toFixed(1)} L)`
   }
   return ""
 }
 
-function computeBmr(sp: Record<string, string | string[]>): number {
+function computeBmr(sp: Record<string, string | string[]>, unit?: string): number {
   const get = (k: string) => {
     const v = sp[k]
     return Array.isArray(v) ? v[0] : v
   }
-  const w = parseFloat(get("weight") ?? "")
-  const h = parseFloat(get("height") ?? "")
+  const wRaw = parseFloat(get("weight") ?? "")
+  const hRaw = parseFloat(get("height") ?? "")
   const age = parseFloat(get("age") ?? "")
   const sex = get("sex")
-  if (![w, h, age].every(Number.isFinite) || w <= 0) return 0
+  if (![wRaw, hRaw, age].every(Number.isFinite) || wRaw <= 0) return 0
+  const w = toMetricWeight(wRaw, unit || "metric")
+  const h = toMetricHeight(hRaw, unit || "metric")
   const base = 10 * w + 6.25 * h - 5 * age
   return sex === "female" ? base - 161 : base + 5
 }

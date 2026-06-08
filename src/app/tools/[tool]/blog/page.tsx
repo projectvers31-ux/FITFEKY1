@@ -57,7 +57,7 @@ export async function generateMetadata({
       description: `${data.name} guides built for women. ${data.description}`,
       images: [
         {
-          url: "/og-image.jpg",
+          url: "/images/hero-yoga-sunset.jpg",
           width: 1200,
           height: 630,
           alt: `${data.name} blog — FitFeky`,
@@ -68,7 +68,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: `${data.name} Blog — FitFeky`,
       description: `${data.name} guides built for women. ${data.description}`,
-      images: ["/og-image.jpg"],
+      images: ["/images/hero-yoga-sunset.jpg"],
       creator: "@fitfeky",
     },
     robots: {

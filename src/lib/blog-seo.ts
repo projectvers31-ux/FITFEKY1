@@ -29,7 +29,7 @@ function resolveUrl(path: string): string {
 }
 
 function resolveImageUrl(image: string | undefined): string {
-  if (!image) return `${SITE_URL}/og-image.jpg`
+  if (!image) return `${SITE_URL}/images/hero-yoga-sunset.jpg`
   if (image.startsWith("http")) return image
   return `${SITE_URL}${image.startsWith("/") ? image : `/${image}`}`
 }

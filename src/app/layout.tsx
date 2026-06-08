@@ -74,7 +74,7 @@ export const metadata: Metadata = {
     url: siteUrl,
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/images/hero-yoga-sunset.jpg",
         width: 1200,
         height: 630,
         alt: "FitFeky — Weight loss tools for women",
@@ -86,7 +86,7 @@ export const metadata: Metadata = {
     title: "FitFeky — Smart Weight Loss Tools for Women",
     description:
       "Free, science-backed calculators and honest product reviews — built for lasting results.",
-    images: ["/og-image.jpg"],
+    images: ["/images/hero-yoga-sunset.jpg"],
     creator: "@fitfeky",
   },
   icons: {
@@ -153,7 +153,7 @@ export default function RootLayout({
         description:
           "Online resource for women's weight loss — calculators, reviews, and educational content.",
         url: `${siteUrl}/`,
-        image: `${siteUrl}/og-image.jpg`,
+        image: `${siteUrl}/images/hero-yoga-sunset.jpg`,
       },
     ],
   }

@@ -19,6 +19,7 @@ const ICON_MAP: Record<string, LucideIcon> = {
   Utensils: Calculator,
   Heart: Calculator,
   Percent: Calculator,
+  Sparkles: Calculator,
 }
 
 export const metadata = buildMetadata({

@@ -3,7 +3,7 @@ import type { Metadata } from "next"
 export const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://fitfeky.com"
 
-export const DEFAULT_OG_IMAGE = "/og-image.jpg"
+export const DEFAULT_OG_IMAGE = "/images/hero-yoga-sunset.jpg"
 export const DEFAULT_FAVICON = "/favicon/favicon.svg"
 
 export const DEFAULT_ROBOTS = {

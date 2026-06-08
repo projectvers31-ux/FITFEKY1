@@ -107,7 +107,7 @@ export async function generateMetadata({
           ]
         : [
             {
-              url: "/og-image.jpg",
+              url: "/images/hero-yoga-sunset.jpg",
               width: 1200,
               height: 630,
               alt: title,
@@ -118,7 +118,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title,
       description,
-      images: post.cover ? [post.cover] : ["/og-image.jpg"],
+      images: post.cover ? [post.cover] : ["/images/hero-yoga-sunset.jpg"],
       creator: "@fitfeky",
     },
     robots: {

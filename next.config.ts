@@ -12,6 +12,12 @@ const nextConfig: NextConfig = {
     contentDispositionType: "attachment",
     contentSecurityPolicy:
       "default-src 'self'; script-src 'none'; sandbox; style-src 'unsafe-inline'",
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+      },
+    ],
   },
   compress: true,
   poweredByHeader: false,

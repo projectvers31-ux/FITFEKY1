@@ -198,6 +198,28 @@ interface WebAppInput {
   reviewCount?: number
 }
 
+export function buildHowToSchema(input: {
+  name: string
+  description: string
+  steps: { title: string; body: string }[]
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: `How to use the ${input.name.toLowerCase()}`,
+    description: input.description,
+    step: input.steps.map((step, i) => ({
+      "@type": "HowToStep",
+      position: i + 1,
+      name: step.title,
+      text: step.body,
+    })),
+    totalTime: "PT30S",
+    estimatedCost: { "@type": "MonetaryAmount", value: "0", currency: "USD" },
+    image: `${SITE_URL}/images/hero-yoga-sunset.jpg`,
+  }
+}
+
 export function buildWebAppResultSchema(input: WebAppInput) {
   return {
     "@context": "https://schema.org",
